@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'flowbite';
+
+main {
+    margin: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+    font-family: 'New Rocker', cursive;
+    text-align: 'center';
+}
+
+.font-cursive {
+    font-family: 'New Rocker', cursive;
+}
+
+p {
+    font-family: 'EB Garamond', serif;
+}
+
+li {
+    font-family: 'EB Garamond', serif;
+}
+
+li.shadow-md {
+    padding: 1rem;
+}

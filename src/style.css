@@ -325,7 +325,7 @@ a:focus {
     margin-left: var(--spacing-0);
   }
   ul,
-  ol {git
+  ol {
     list-style-position: inside;
   }
 }
@@ -334,4 +334,34 @@ em {
   font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
   font-style: italic;
   font-weight: normal;
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  position: fixed;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  width: 100%;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #111;
 }

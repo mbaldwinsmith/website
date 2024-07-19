@@ -6,16 +6,16 @@ import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const blogPosts = data.blog.nodes
+  const musingsPosts = data.musings.nodes
   const prayerPosts = data.prayer.nodes
   const poetryPosts = data.poetry.nodes
 
-  if (blogPosts.length === 0 && prayerPosts.length === 0 && poetryPosts.length === 0) {
+  if (musingsPosts.length === 0 && prayerPosts.length === 0 && poetryPosts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/blog", "content/prayer", or "content/poetry" (or the
+          No blog posts found. Add markdown posts to "content/musings", "content/prayer", or "content/poetry" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in gatsby-config.js).
         </p>
       </Layout>
@@ -25,21 +25,21 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Bio />
-      <h2>Musings</h2>
+      <h1 className="text-center">Musings</h1>
       <ol style={{ listStyle: `none` }}>
-        {blogPosts.map(post => {
+        {musingsPosts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <li key={post.fields.slug}>
+            <li key={post.fields.slug} className="shadow-md">
               <article
-                className="post-list-item"
+                className="prose"
                 itemScope
                 itemType="http://schema.org/Article"
               >
                 <header>
                   <h2>
-                    <Link to={`/blog${post.fields.slug}`} itemProp="url">
+                    <Link to={`/musings${post.fields.slug}`} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
@@ -58,13 +58,13 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
-      <h2>Prayer</h2>
+      <h1 className="text-center">Prayer</h1>
       <ol style={{ listStyle: `none` }}>
         {prayerPosts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <li key={post.fields.slug}>
+            <li key={post.fields.slug} className="shadow-md">
               <article
                 className="post-list-item"
                 itemScope
@@ -91,13 +91,13 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
-      <h2>Poetry</h2>
+      <h1 className="text-center">Poetry</h1>
       <ol style={{ listStyle: `none` }}>
         {poetryPosts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <li key={post.fields.slug}>
+            <li key={post.fields.slug} className="shadow-md">
               <article
                 className="post-list-item"
                 itemScope
@@ -139,8 +139,8 @@ export const pageQuery = graphql`
         title
       }
     }
-    blog: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
+    musings: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/musings/" } }
       sort: { frontmatter: { date: DESC } }
     ) {
       nodes {

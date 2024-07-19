@@ -9,13 +9,13 @@ const BlogIndex = ({ data }) => {
   return (
     <Layout>
       <Seo title="Musings" />
-      <h1>Musings</h1>
+      <h1 className="prose-h1">Musings</h1>
       <ul>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           return (
             <li key={post.fields.slug}>
-              <Link to={`/blog${post.fields.slug}`}>
+              <Link to={`/musings${post.fields.slug}`}>
                 <h2>{title}</h2>
               </Link>
               <p>{post.frontmatter.date}</p>
@@ -33,7 +33,7 @@ export default BlogIndex
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
+      filter: { fileAbsolutePath: { regex: "/musings/" } }
       sort: { frontmatter: { date: DESC } }
     ) {
       nodes {

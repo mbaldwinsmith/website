@@ -14,7 +14,7 @@ const BlogPostTemplate = ({
   return (
     <Layout location={location} title={siteTitle}>
       <article
-        className="blog-post"
+        className="prose"
         itemScope
         itemType="http://schema.org/Article"
       >
@@ -25,6 +25,7 @@ const BlogPostTemplate = ({
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
+          className="prose"
         />
         <hr />
         <footer>

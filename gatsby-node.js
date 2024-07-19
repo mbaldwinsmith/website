@@ -1,7 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
+const musingsPostTemplate = path.resolve(`./src/templates/musings-post.js`)
 const prayerPostTemplate = path.resolve(`./src/templates/prayer-post.js`)
 const poetryPostTemplate = path.resolve(`./src/templates/poetry-post.js`)
 
@@ -10,8 +10,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(`
     {
-      blog: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/blog/" } }
+      musings: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/musings/" } }
         sort: { frontmatter: { date: ASC } }
         limit: 1000
       ) {
@@ -54,7 +54,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const blogPosts = result.data.blog.nodes
+  const musingsPosts = result.data.musings.nodes
   const prayerPosts = result.data.prayer.nodes
   const poetryPosts = result.data.poetry.nodes
 
@@ -75,7 +75,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 
-  createBlogPages(blogPosts, '/blog', blogPostTemplate)
+  createBlogPages(musingsPosts, '/musings', musingsPostTemplate)
   createBlogPages(prayerPosts, '/prayer', prayerPostTemplate)
   createBlogPages(poetryPosts, '/poetry', poetryPostTemplate)
 }
