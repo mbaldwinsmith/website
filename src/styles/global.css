@@ -14,16 +14,30 @@ h4,
 h5,
 h6,
 h7 {
-    font-family: 'New Rocker', cursive;
+    font-family: 'IM Fell DW Pica', serif;
     text-align: 'center';
+}
+
+strong {
+    font-family: 'IM Fell DW Pica SC', serif;
 }
 
 .font-cursive {
     font-family: 'New Rocker', cursive;
 }
 
+.font-ruthie {
+    font-family: 'Ruthie', cursive;
+    font-weight: 500;
+}
+
+.font-im-fell {
+    font-family: 'IM Fell DW Pica', serif;
+}
+
 p {
     font-family: 'EB Garamond', serif;
+    font-size: 1.25rem;
 }
 
 li {
@@ -32,4 +46,24 @@ li {
 
 li.shadow-md {
     padding: 1rem;
+}
+
+p:first-child:first-letter {
+    color: red;
+    float: left;
+    font-family: 'EB Garamond', serif;
+    font-size: 4.2rem;
+    line-height: 3.3rem;
+    margin: 0;
+    padding: 0.5rem;
+}
+  
+.invisible {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    white-space: nowrap;
+    width: 1px;
 }

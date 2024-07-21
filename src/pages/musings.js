@@ -9,12 +9,12 @@ const BlogIndex = ({ data }) => {
   return (
     <Layout>
       <Seo title="Musings" />
-      <h1 className="prose-h1">Musings</h1>
+      <h1 className="prose-h1 text-center">Musings</h1>
       <ul>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           return (
-            <li key={post.fields.slug}>
+            <li key={post.fields.slug} className="shadow-md">
               <Link to={`/musings${post.fields.slug}`}>
                 <h2>{title}</h2>
               </Link>

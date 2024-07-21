@@ -9,12 +9,12 @@ const PoetryIndex = ({ data }) => {
   return (
     <Layout>
       <Seo title="Poetry" />
-      <h1>Poetry</h1>
+      <h1 className="text-center">Poetry</h1>
       <ul>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           return (
-            <li key={post.fields.slug}>
+            <li key={post.fields.slug} className="shadow-md">
               <Link to={`/poetry${post.fields.slug}`}>
                 <h2>{title}</h2>
               </Link>

@@ -9,12 +9,12 @@ const PrayerIndex = ({ data }) => {
   return (
     <Layout>
       <Seo title="Prayer" />
-      <h1>Prayer</h1>
+      <h1 className="text-center">Prayer</h1>
       <ul>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           return (
-            <li key={post.fields.slug}>
+            <li key={post.fields.slug} className="shadow-md">
               <Link to={`/prayer${post.fields.slug}`}>
                 <h2>{title}</h2>
               </Link>

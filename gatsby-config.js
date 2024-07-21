@@ -157,6 +157,22 @@ module.exports = {
             name: `New Rocker`,
             file: `https://fonts.googleapis.com/css2?family=New+Rocker&display=swap`,
           },
+          {
+            name: `Ruthie`,
+            file: `https://fonts.googleapis.com/css2?family=Ruthie&display=swap`,
+          },
+          {
+            name: `Tilt Prism`,
+            file: `https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap`,
+          },
+          {
+            name: `IM Fell DW Pica`,
+            file: `https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap`,
+          },
+          {
+            name: `IM Fell DW Pica SC`,
+            file: `https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica+SC&display=swap`,
+          },
         ],
       },
     },
